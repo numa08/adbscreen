@@ -4,7 +4,7 @@ SCRIPT=`dirname ${0}`/monkey_screen.py
 MONKEY_SCREEN=`cygpath -a -w ${SCRIPT}`
 
 usage(){
-        echo "Usage: adbscreenn [-s serialno] [-f filename]" 1>&2
+        echo "Usage: adbscreen [-s serialno] [-f filename]" 1>&2
         echo "-s: Serial Number of devices" 1>&2
         echo "filename: output screen shot image filename" 1>&2
         exit 1
