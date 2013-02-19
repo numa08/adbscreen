@@ -1,7 +1,11 @@
 #!/bin/bash
+SCRIPT=$(cd $(dirname $0);pwd)/adbscreen.py
+MONKEY_SCREEN=${SCRIPT}
 
-SCRIPT=`dirname ${0}`/monkey_screen.py
+
+### Cygwin must out of comment
 MONKEY_SCREEN=`cygpath -a -w ${SCRIPT}`
+####
 
 usage(){
         echo "Usage: adbscreen [-s serialno] [-f filename]" 1>&2
@@ -41,4 +45,7 @@ COMMAND="monkeyrunner.bat ${MONKEY_SCREEN} ${SERIAL} ${FILE}"
 echo $COMMAND
 monkeyrunner.bat ${MONKEY_SCREEN} ${SERIAL} ${FILE}
 
-mv ${ANDROID_HOME}/tools/${FILE} ./${FILE}
+### Mac/Linux must comment out
+#monkeyrunner.bat ${MONKEY_SCREEN} ${SERIAL} ${FILE}
+
+mv ${ANDROID_SDK_HOME}/tools/${FILE} ./${FILE}
